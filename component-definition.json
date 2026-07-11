@@ -146,6 +146,15 @@
                   "selector": "div:nth-child(2)"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/card/v1/card",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
             }
           }
         },
