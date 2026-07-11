@@ -17,6 +17,8 @@ import {
   toCamelCase,
 } from './aem.js';
 
+export const NX_ORIGIN = window.location.origin;
+
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
