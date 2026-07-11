@@ -100,6 +100,15 @@
           "model": "cards",
           "filter": "cards",
           "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/cards/v1/cards",
+                "template": {
+                  "name": "Cards",
+                  "model": "cards"
+                }
+              }
+            },
             "da": {
               "rows": 1,
               "columns": 2
