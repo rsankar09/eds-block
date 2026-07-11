@@ -80,7 +80,9 @@
   "filters": [
     {
       "id": "cards",
-      "components": ["cards", "card"]
+      "components": [
+        "card"
+      ]
     }
   ]
 }
