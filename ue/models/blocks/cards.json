@@ -79,6 +79,10 @@
     {
       "id": "cards",
       "components": ["card"]
+    },
+    {
+      "id": "card",
+      "components": []
     }
   ]
 }
