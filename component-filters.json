@@ -39,10 +39,6 @@
     ]
   },
   {
-    "id": "card",
-    "components": []
-  },
-  {
     "id": "carousel",
     "components": [
       "carousel-item"
