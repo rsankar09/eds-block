@@ -12,7 +12,7 @@
             "template": {
                 "name": "Cards",
                 "model": "cards",
-                "html": "<div class='cards'><ul>{{#each items}}<li>{{> card this.card}}</li>{{/each}}</ul></div>"
+                "html": "<div class='cards'><ul>{{#each items}}<li>{{> card this}}</li>{{/each}}</ul></div>"
             }
           }
         },
@@ -42,9 +42,7 @@
             "template": {
               "name": "Card",
               "model": "card",
-              "image": "<img src=\"image.jpg\" alt=\"Image\">",
-              "imageAlt": "Image",
-              "text": "<h1>Welcome to our site</h1>"
+              "html": "<div class='cards-card-image'><picture><img src='{{image}}' alt='{{imageAlt}}'></picture></div><div class='cards-card-body'>{{{text}}}</div>"
             }
 
           }
