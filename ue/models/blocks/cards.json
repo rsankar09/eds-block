@@ -3,16 +3,15 @@
     {
       "title": "Cards",
       "id": "cards",
-      "model": "cards",
-      "filter": "cards",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-                "name": "Cards",
-                "model": "cards",
-                "html": "<div class='cards'><ul>{{#each items}}<li>{{> card this.card}}</li>{{/each}}</ul></div>"
+              "name": "Cards",
+              "model": "cards",
+              "filter": "cards",
+              "html": "<div class='cards'><ul>{{#each items}}<li>{{> card this}}</li>{{/each}}</ul></div>"
             }
           }
         },
@@ -25,61 +24,69 @@
     {
       "title": "Card",
       "id": "card",
-      "model": "card",
       "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 2,
-          "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]"},
-            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]"},
-            { "name": "text", "selector": "div:nth-child(2)" }
-          ]
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Card",
               "model": "card",
-              "image": "<img src=\"image.jpg\" alt=\"Image\">",
-              "imageAlt": "Image",
-              "text": "<h1>Welcome to our site</h1>"
+              "filter": "card",
+              "html": "<div><picture><img src='{{image}}' alt='{{imageAlt}}'></picture></div><div>{{{text}}}</div>"
             }
-
           }
+        },
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1) picture img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1) picture img[alt]" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
         }
       }
     }
   ],
+
   "models": [
+    {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "container",
+          "name": "items",
+          "label": "Cards",
+          "multi": true,
+          "valueType": "card"
+        }
+      ]
+    },
     {
       "id": "card",
       "fields": [
         {
           "component": "reference",
-          "valueType": "string",
           "name": "image",
           "label": "Image",
-          "multi": false
+          "valueType": "string"
         },
         {
           "component": "text",
-          "valueType": "string",
           "name": "imageAlt",
           "label": "Image Alt",
-          "multi": false
+          "valueType": "string"
         },
         {
           "component": "richtext",
           "name": "text",
-          "value": "",
           "label": "Text",
           "valueType": "string"
         }
       ]
     }
   ],
+
   "filters": [
     {
       "id": "cards",
