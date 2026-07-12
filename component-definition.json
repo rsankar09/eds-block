@@ -127,6 +127,7 @@
         {
           "title": "Card",
           "id": "card",
+          "model": "card",
           "plugins": {
             "da": {
               "rows": 1,
