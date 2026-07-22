@@ -120,7 +120,13 @@
             },
             "da": {
               "rows": 1,
-              "columns": 2
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "style",
+                  "selector": ".cards-style[data-style]"
+                }
+              ]
             }
           }
         },
