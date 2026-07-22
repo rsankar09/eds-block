@@ -69,11 +69,11 @@
                             "value": "side-by-side"
                         },
                         {
-                            "name": "Image On Left",
+                            "name": "Image-On-Left",
                             "value": "image-on-left"
                         },
                         {
-                            "name": "Image On Right",
+                            "name": "Image-On-Right",
                             "value": "image-on-right"
                         }
                     ]
