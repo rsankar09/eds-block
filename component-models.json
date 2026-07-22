@@ -309,7 +309,7 @@
         "required": true
       },
       {
-        "component": "aem-content",
+        "component": "text",
         "name": "textContent_cta",
         "label": "CTA",
         "valueType": "string"
