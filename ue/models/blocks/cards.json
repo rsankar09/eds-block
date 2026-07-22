@@ -73,6 +73,22 @@
           "valueType": "string"
         }
       ]
+    },
+    {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Home",
+              "value": "home"
+            }
+          ]
+        }
+      ]
     }
   ],
   "filters": [
