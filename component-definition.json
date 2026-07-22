@@ -400,7 +400,7 @@
               "fields": [
                 {
                   "name": "classes",
-                  "selector": ".teaser-style[data-style]"
+                  "selector": "[data-style]"
                 },
                 {
                   "name": "image",
