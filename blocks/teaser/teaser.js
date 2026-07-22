@@ -28,27 +28,34 @@ function addEventListeners(block) {
  */
 export default function decorate(block) {
   /* ---------------------------------------------------------
-     1. Read UE attribute (data-style) and apply class
+     1. Read UE attribute (data-style)
      --------------------------------------------------------- */
-  const styleValue = block.dataset.style || '';
-
-  if (styleValue) {
-    block.classList.add(styleValue);
-  }
+  const styleValue = block.dataset.style || 'default';
 
   /* ---------------------------------------------------------
-     2. Create DA-visible node for storing style
+     2. Remove ALL old layout classes
+     --------------------------------------------------------- */
+  ['default', 'side-by-side', 'image-on-left', 'image-on-right']
+    .forEach(cls => block.classList.remove(cls));
+
+  /* ---------------------------------------------------------
+     3. Apply the new class
+     --------------------------------------------------------- */
+  block.classList.add(styleValue);
+
+  /* ---------------------------------------------------------
+     4. DA-visible node for storing style
      --------------------------------------------------------- */
   let styleNode = block.querySelector('.teaser-style');
   if (!styleNode) {
     styleNode = document.createElement('div');
     styleNode.className = 'teaser-style';
-    styleNode.dataset.style = styleValue;
     block.prepend(styleNode);
   }
+  styleNode.dataset.style = styleValue;
 
   /* ---------------------------------------------------------
-     3. Common DOM treatments
+     5. Common DOM treatments
      --------------------------------------------------------- */
   block.querySelector(':scope > div:last-child')?.classList.add('content');
   block.querySelector('h1,h2,h3,h4,h5,h6')?.classList.add('title');
@@ -62,7 +69,7 @@ export default function decorate(block) {
   });
 
   /* ---------------------------------------------------------
-     4. Apply layout-specific wrappers
+     6. Layout-specific wrappers
      --------------------------------------------------------- */
   const options = getOptions(block);
 
@@ -74,34 +81,30 @@ export default function decorate(block) {
   } else if (options.includes('image-on-right')) {
     block.classList.add('image-right');
     block.querySelector(':scope > div:first-child')?.classList.add('image-wrapper');
-  } else if (options.length === 0) {
-    // Default option
+  } else if (options.includes('default')) {
     block.querySelector('picture')?.classList.add('image-wrapper');
   }
 
   /* ---------------------------------------------------------
-     5. CTA hover zoom effect
+     7. CTA hover zoom effect
      --------------------------------------------------------- */
   addEventListeners(block);
 
   /* ---------------------------------------------------------
-     6. UE sync: watch for data-style changes
+     8. UE sync: watch for data-style changes
      --------------------------------------------------------- */
   const observer = new MutationObserver(() => {
-    const newStyle = block.dataset.style || '';
+    const newStyle = block.dataset.style || 'default';
 
-    // Update DA node
-    styleNode.dataset.style = newStyle;
-
-    // Remove old option classes
-    ['side-by-side', 'image-on-left', 'image-on-right'].forEach((cls) => {
-      block.classList.remove(cls);
-    });
+    // Remove old classes
+    ['default', 'side-by-side', 'image-on-left', 'image-on-right']
+      .forEach(cls => block.classList.remove(cls));
 
     // Apply new class
-    if (newStyle) {
-      block.classList.add(newStyle);
-    }
+    block.classList.add(newStyle);
+
+    // Sync DA node
+    styleNode.dataset.style = newStyle;
   });
 
   observer.observe(block, { attributes: true, attributeFilter: ['data-style'] });
