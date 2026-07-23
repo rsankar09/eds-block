@@ -25,31 +25,31 @@
                 },
                 {
                 "name": "image",
-                "selector": "div:nth-child(1) picture img[src]"
+                "selector": ".image-wrapper img[src]"
                 },
                 {
                 "name": "imageAlt",
-                "selector": "div:nth-child(1) picture img[alt]"
+                "selector": ".image-wrapper img[alt]"
                 },
                 {
                 "name": "textContent_title",
-                "selector": "div:nth-child(2)"
+                "selector": ".content .title"
                 },
                 {
                 "name": "textContent_subtitle",
-                "selector": "div:nth-child(3)"
+                "selector": ".content .subtitle"
                 },
                 {
                 "name": "textContent_description",
-                "selector": "div:nth-child(4)"
+                "selector": ".content .description"
                 },
                 {
                 "name": "textContent_cta",
-                "selector": "div:nth-child(5) a[href]"
+                "selector": ".content .cta[href]"
                 },
                 {
                 "name": "textContent_ctaText",
-                "selector": "div:nth-child(5) a"
+                "selector": ".content .cta"
                 }
             ]
             }
