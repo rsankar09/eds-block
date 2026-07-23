@@ -2,21 +2,37 @@ export default function decorate(block) {
   block.classList.add('teaser');
 
   const styleClass = block.dataset.style;
-  if (styleClass) {
-    block.classList.add(styleClass);
+  if (styleClass) block.classList.add(styleClass);
+
+  // Normalize title
+  const titleWrapper = block.children[1];
+  const titleP = titleWrapper?.querySelector('p');
+  if (titleP) {
+    titleP.classList.add('teaser-title');
+    titleWrapper.replaceWith(titleP);
   }
 
-  const imgWrapper = block.querySelector('.image-wrapper');
-  const img = imgWrapper?.querySelector('img');
+  // Normalize subtitle
+  const subtitleWrapper = block.children[2];
+  const subtitleP = subtitleWrapper?.querySelector('p');
+  if (subtitleP) {
+    subtitleP.classList.add('teaser-subtitle');
+    subtitleWrapper.replaceWith(subtitleP);
+  }
 
-  const title = block.children[1]?.querySelector('p');
-  const subtitle = block.children[2]?.querySelector('p');
-  const description = block.children[3]?.querySelector('p');
-  const cta = block.children[4]?.querySelector('a');
+  // Normalize description
+  const descWrapper = block.children[3];
+  const descP = descWrapper?.querySelector('p');
+  if (descP) {
+    descP.classList.add('teaser-description');
+    descWrapper.replaceWith(descP);
+  }
 
-  // Add classes for styling
-  title?.classList.add('teaser-title');
-  subtitle?.classList.add('teaser-subtitle');
-  description?.classList.add('teaser-description');
-  cta?.classList.add('teaser-cta');
+  // CTA (if present)
+  const ctaWrapper = block.children[4];
+  const cta = ctaWrapper?.querySelector('a');
+  if (cta) {
+    cta.classList.add('teaser-cta');
+    ctaWrapper.replaceWith(cta);
+  }
 }
