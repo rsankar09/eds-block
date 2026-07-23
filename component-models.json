@@ -307,7 +307,7 @@
         "valueType": "string",
         "name": "imageAlt",
         "label": "Image alt text",
-        "required": true
+        "required": false
       },
       {
         "component": "text",
