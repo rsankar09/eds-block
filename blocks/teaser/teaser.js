@@ -4,35 +4,32 @@ export default function decorate(block) {
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
-  // Normalize title
-  const titleWrapper = block.children[1];
-  const titleP = titleWrapper?.querySelector('p');
-  if (titleP) {
-    titleP.classList.add('teaser-title');
-    titleWrapper.replaceWith(titleP);
+  // 1. Detect image wrapper
+  const firstChild = block.children[0];
+  const imgWrapper = firstChild?.querySelector('.image-wrapper');
+  const img = imgWrapper?.querySelector('img');
+
+  // 2. Remove empty image wrapper if no image exists
+  if (!img) {
+    firstChild.remove();
   }
 
-  // Normalize subtitle
-  const subtitleWrapper = block.children[2];
-  const subtitleP = subtitleWrapper?.querySelector('p');
-  if (subtitleP) {
-    subtitleP.classList.add('teaser-subtitle');
-    subtitleWrapper.replaceWith(subtitleP);
-  }
+  // 3. Normalize title
+  const title = block.querySelector('[data-aue-prop="textContent_title"]');
+  title?.classList.add('teaser-title');
 
-  // Normalize description
-  const descWrapper = block.children[3];
-  const descP = descWrapper?.querySelector('p');
-  if (descP) {
-    descP.classList.add('teaser-description');
-    descWrapper.replaceWith(descP);
-  }
+  // 4. Normalize subtitle
+  const subtitle = block.querySelector('[data-aue-prop="textContent_subtitle"]');
+  subtitle?.classList.add('teaser-subtitle');
 
-  // CTA (if present)
-  const ctaWrapper = block.children[4];
-  const cta = ctaWrapper?.querySelector('a');
-  if (cta) {
-    cta.classList.add('teaser-cta');
-    ctaWrapper.replaceWith(cta);
-  }
+  // 5. Normalize description
+  const description = block.querySelector('[data-aue-prop="textContent_description"]');
+  description?.classList.add('teaser-description');
+
+  // 6. Normalize CTA
+  const cta = block.querySelector('[data-aue-prop="textContent_cta"]');
+  cta?.classList.add('teaser-cta');
+
+  const ctaText = block.querySelector('[data-aue-prop="textContent_ctaText"]');
+  ctaText?.classList.add('teaser-cta-text');
 }
