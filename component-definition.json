@@ -396,7 +396,7 @@
             },
             "da": {
               "rows": 1,
-              "columns": 7,
+              "columns": 1,
               "fields": [
                 {
                   "name": "classes",
