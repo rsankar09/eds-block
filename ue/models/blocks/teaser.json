@@ -17,7 +17,7 @@
             },
             "da": {
             "rows": 1,
-            "columns": 1,
+            "columns": 2,
             "fields": [
                 {
                 "name": "classes",
@@ -33,11 +33,11 @@
                 },
                 {
                 "name": "textContent_title",
-                "selector": "div>div>h1"
+                "selector": "div:nth-child(2)"
                 },
                 {
                 "name": "textContent_subtitle",
-                "selector": "div>div>h2"
+                "selector": "div:nth-child(3)"
                 },
                 {
                 "name": "textContent_description",
