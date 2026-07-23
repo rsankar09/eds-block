@@ -25,31 +25,23 @@
                 },
                 {
                 "name": "image",
-                "selector": ".image-wrapper img[src]"
+                "selector": "div:nth-child(1) picture img[src]"
                 },
                 {
                 "name": "imageAlt",
-                "selector": ".image-wrapper img[alt]"
+                "selector": "div:nth-child(1) picture img[alt]"
                 },
                 {
-                "name": "textContent_title",
-                "selector": ".content .title"
-                },
-                {
-                "name": "textContent_subtitle",
-                "selector": ".content .subtitle"
-                },
-                {
-                "name": "textContent_description",
-                "selector": ".content .description"
+                "name": "textContent_text",
+                "selector": "div:nth-child(2)"
                 },
                 {
                 "name": "textContent_cta",
-                "selector": ".content .cta[href]"
+                "selector": "div:nth-child(3) a[href]"
                 },
                 {
                 "name": "textContent_ctaText",
-                "selector": ".content .cta"
+                "selector": "div:nth-child(3) a"
                 }
             ]
             }
@@ -98,24 +90,12 @@
                     "valueType": "string",
                     "name": "imageAlt",
                     "label": "Image alt text",
-                    "required": false
-                },
-                {
-                    "component": "text",
-                    "name": "textContent_title",
-                    "label": "Title",
-                    "valueType": "string"
-                },
-                {
-                    "component": "text",
-                    "name": "textContent_subtitle",
-                    "label": "Subtitle",
-                    "valueType": "string"
+                    "required": true
                 },
                 {
                     "component": "richtext",
-                    "name": "textContent_description",
-                    "label": "Description",
+                    "name": "textContent_text",
+                    "label": "Text",
                     "valueType": "string",
                     "required": true
                 },
