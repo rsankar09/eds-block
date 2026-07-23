@@ -397,7 +397,6 @@
             "da": {
               "rows": 1,
               "columns": 1,
-              "unsafeHTML": "<div></div>",
               "fields": [
                 {
                   "name": "classes",
