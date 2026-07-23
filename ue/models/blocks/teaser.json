@@ -33,11 +33,11 @@
                 },
                 {
                 "name": "textContent_title",
-                "selector": "div:nth-child(2)"
+                "selector": "div>div>h1"
                 },
                 {
                 "name": "textContent_subtitle",
-                "selector": "div:nth-child(3)"
+                "selector": "div>div>h2"
                 },
                 {
                 "name": "textContent_description",
