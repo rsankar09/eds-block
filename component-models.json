@@ -307,12 +307,24 @@
         "valueType": "string",
         "name": "imageAlt",
         "label": "Image alt text",
-        "required": true
+        "required": false
+      },
+      {
+        "component": "text",
+        "name": "textContent_title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "textContent_subtitle",
+        "label": "Subtitle",
+        "valueType": "string"
       },
       {
         "component": "richtext",
-        "name": "textContent_text",
-        "label": "Text",
+        "name": "textContent_description",
+        "label": "Description",
         "valueType": "string",
         "required": true
       },

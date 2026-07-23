@@ -396,7 +396,7 @@
             },
             "da": {
               "rows": 1,
-              "columns": 2,
+              "columns": 7,
               "fields": [
                 {
                   "name": "classes",
@@ -404,23 +404,31 @@
                 },
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) picture img[src]"
+                  "selector": ".image-wrapper img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) picture img[alt]"
+                  "selector": ".image-wrapper img[alt]"
                 },
                 {
-                  "name": "textContent_text",
+                  "name": "textContent_title",
                   "selector": "div:nth-child(2)"
                 },
                 {
+                  "name": "textContent_subtitle",
+                  "selector": "div:nth-child(3)"
+                },
+                {
+                  "name": "textContent_description",
+                  "selector": "div:nth-child(4)"
+                },
+                {
                   "name": "textContent_cta",
-                  "selector": "div:nth-child(3) a[href]"
+                  "selector": "div:nth-child(5) a[href]"
                 },
                 {
                   "name": "textContent_ctaText",
-                  "selector": "div:nth-child(3) a"
+                  "selector": "div:nth-child(5) a"
                 }
               ]
             }
