@@ -32,16 +32,24 @@
                 "selector": "div:nth-child(1) picture img[alt]"
                 },
                 {
-                "name": "textContent_text",
+                "name": "textContent_title",
                 "selector": "div:nth-child(2)"
                 },
                 {
+                "name": "textContent_subtitle",
+                "selector": "div:nth-child(3)"
+                },
+                {
+                "name": "textContent_description",
+                "selector": "div:nth-child(4)"
+                },
+                {
                 "name": "textContent_cta",
-                "selector": "div:nth-child(3) a[href]"
+                "selector": "div:nth-child(5) a[href]"
                 },
                 {
                 "name": "textContent_ctaText",
-                "selector": "div:nth-child(3) a"
+                "selector": "div:nth-child(5) a"
                 }
             ]
             }
@@ -93,9 +101,21 @@
                     "required": true
                 },
                 {
+                    "component": "text",
+                    "name": "textContent_title",
+                    "label": "Title",
+                    "valueType": "string"
+                },
+                {
+                    "component": "text",
+                    "name": "textContent_subtitle",
+                    "label": "Subtitle",
+                    "valueType": "string"
+                },
+                {
                     "component": "richtext",
-                    "name": "textContent_text",
-                    "label": "Text",
+                    "name": "textContent_description",
+                    "label": "Description",
                     "valueType": "string",
                     "required": true
                 },
