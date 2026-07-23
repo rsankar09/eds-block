@@ -4,6 +4,16 @@ export default function decorate(block) {
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
+  // 1. Detect image wrapper
+  const firstChild = block.children[0];
+  const imgWrapper = firstChild?.querySelector('.image-wrapper');
+  const img = imgWrapper?.querySelector('img');
+
+  // 2. Remove empty image wrapper if no image exists
+  if (!img) {
+    firstChild.remove();
+  }
+
   // Normalize title
   const titleWrapper = block.children[1];
   const titleP = titleWrapper?.querySelector('p');
