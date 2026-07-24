@@ -32,24 +32,24 @@
                             "selector": ".image-wrapper img[alt]"
                         },
                         {
-                            "name": "textContent_title",
-                            "selector": "div:nth-child(2) p"
+                            "name": "teaser-title",
+                            "selector": "p.teaser-title"
                         },
                         {
-                            "name": "textContent_subtitle",
-                            "selector": "div:nth-child(3) p"
+                            "name": "teaser-subtitle",
+                            "selector": "p.teaser-subtitle"
                         },
                         {
-                            "name": "textContent_description",
-                            "selector": "div:nth-child(4) p"
+                            "name": "teaser-description",
+                            "selector": "p.teaser-description"
                         },
                         {
-                            "name": "textContent_cta",
-                            "selector": "div:nth-child(5) a[href]"
+                            "name": "teaser-cta",
+                            "selector": "p.teaser-cta a[href]"
                         },
                         {
-                            "name": "textContent_ctaText",
-                            "selector": "div:nth-child(5) a"
+                            "name": "teaser-ctaText",
+                            "selector": "p.teaser-cta a"
                         }
                     ]
                 }
@@ -102,32 +102,32 @@
                 },
                 {
                     "component": "text",
-                    "name": "textContent_title",
+                    "name": "teaser-title",
                     "label": "Title",
                     "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "name": "textContent_subtitle",
+                    "name": "teaser-subtitle",
                     "label": "Subtitle",
                     "valueType": "string"
                 },
                 {
                     "component": "richtext",
-                    "name": "textContent_description",
+                    "name": "teaser-description",
                     "label": "Description",
                     "valueType": "string",
                     "required": true
                 },
                 {
                     "component": "text",
-                    "name": "textContent_cta",
+                    "name": "teaser-cta",
                     "label": "CTA",
                     "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "name": "textContent_ctaText",
+                    "name": "teaser-ctaText",
                     "label": "CTA label",
                     "valueType": "string"
                 }
