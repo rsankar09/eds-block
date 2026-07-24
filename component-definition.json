@@ -393,27 +393,15 @@
                 },
                 {
                   "name": "image",
-                  "selector": ".image-wrapper picture img[src]"
+                  "selector": "div>div>picture>img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": ".image-wrapper picture img[alt]"
+                  "selector": "div>div>picture>img[alt]"
                 },
                 {
-                  "name": "title",
-                  "selector": ".teaser-title"
-                },
-                {
-                  "name": "subtitle",
-                  "selector": ".teaser-subtitle"
-                },
-                {
-                  "name": "description",
-                  "selector": ".teaser-description"
-                },
-                {
-                  "name": "cta",
-                  "selector": ".teaser-cta"
+                  "name": "teaser-title",
+                  "selector": "div>div>h1"
                 }
               ]
             }

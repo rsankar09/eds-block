@@ -6,35 +6,23 @@
       "model": "teaser",
       "plugins": {
         "da": {
-          "unsafeHTML": "<div class=\"teaser\"><p class=\"teaser-title\"></p><div class=\"teaser-body\"><div class=\"image-wrapper\"><picture><img></picture></div><div class=\"text-wrapper\"><p class=\"teaser-subtitle\"></p><p class=\"teaser-description\"></p><p class=\"teaser-cta\"></p></div></div></div>",
+        "unsafeHTML": "<div class=\"teaser\"><p class=\"teaser-title\"></p><div class=\"teaser-body\"><div class=\"image-wrapper\"><picture><img></picture></div><div class=\"text-wrapper\"><p class=\"teaser-subtitle\"></p><p class=\"teaser-description\"></p><p class=\"teaser-cta\"></p></div></div></div>",
           "fields": [
             {
-              "name": "classes",
-              "selector": "[data-style]"
+                "name": "classes",
+                "selector": "[data-style]"
             },
             {
               "name": "image",
-              "selector": ".image-wrapper picture img[src]"
+              "selector": "div>div>picture>img[src]"
             },
             {
               "name": "imageAlt",
-              "selector": ".image-wrapper picture img[alt]"
+              "selector": "div>div>picture>img[alt]"
             },
             {
-              "name": "title",
-              "selector": ".teaser-title"
-            },
-            {
-              "name": "subtitle",
-              "selector": ".teaser-subtitle"
-            },
-            {
-              "name": "description",
-              "selector": ".teaser-description"
-            },
-            {
-              "name": "cta",
-              "selector": ".teaser-cta"
+              "name": "teaser-title",
+              "selector": "div>div>h1"
             }
           ]
         }
@@ -46,20 +34,31 @@
       "id": "teaser",
       "fields": [
         {
-          "component": "select",
-          "name": "classes",
-          "value": "",
-          "label": "Teaser options",
-          "valueType": "string",
-          "options": [
-            { "name": "Default", "value": "default" },
-            { "name": "Image-On-Left", "value": "image-on-left" },
-            { "name": "Image-On-Right", "value": "image-on-right" },
-            { "name": "Image-On-Top", "value": "image-on-top" },
-            { "name": "Image-On-Bottom", "value": "image-on-bottom" },
-            { "name": "Side-by-side", "value": "side-by-side" }
-          ]
-        },
+            "component": "select",
+            "name": "classes",
+            "value": "",
+            "label": "Teaser options",
+            "description": "",
+            "valueType": "string",
+            "options": [
+                {
+                    "name": "Default",
+                    "value": "default"
+                },
+                {
+                    "name": "Image-On-Left",
+                    "value": "image-on-left"
+                },
+                {
+                    "name": "Image-On-Right",
+                    "value": "image-on-right"
+                },
+                {
+                    "name": "Side-by-side",
+                    "value": "side-by-side"
+                }
+            ]
+        },        
         {
           "component": "reference",
           "valueType": "string",
@@ -71,30 +70,14 @@
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Alt"
+          "label": "Alt",
+          "value": ""
         },
         {
           "component": "text",
-          "name": "title",
+          "name": "teaser-title",
+          "value": "",
           "label": "Title",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "subtitle",
-          "label": "Subtitle",
-          "valueType": "string"
-        },
-        {
-          "component": "textarea",
-          "name": "description",
-          "label": "Description",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "cta",
-          "label": "CTA",
           "valueType": "string"
         }
       ]
