@@ -3,44 +3,37 @@ export default function decorate(block) {
   console.log(block);
   console.log(block.dataset);
   console.log(block.dataset.style);
-  
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
   const rows = [...block.children];
 
-  // Extract columns (DA always wraps content in col 0)
-  const imageCol = rows[0]?.children[0];
-  const titleCol = rows[1]?.children[0];
-  const subtitleCol = rows[2]?.children[0];
-  const descCol = rows[3]?.children[0];
-  const ctaCol = rows[4]?.children[0];
+  const getCol = (row) => row?.children?.[0] || row;
 
-  // Extract actual elements
+  const imageCol = getCol(rows[0]);
+  const titleCol = getCol(rows[1]);
+  const subtitleCol = getCol(rows[2]);
+  const descCol = getCol(rows[3]);
+  const ctaCol = getCol(rows[4]);
+
   const picture = imageCol?.querySelector('picture');
-  const title = titleCol?.querySelector('h1, h2, h3');
+  const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3');
   const subtitle = subtitleCol?.querySelector('p');
   const description = descCol?.querySelector('p');
   const cta = ctaCol?.querySelector('a');
 
-  // Clear block
   block.innerHTML = '';
 
-  /* -------------------------------------------
-     TITLE (full width)
-     ------------------------------------------- */
+  // TITLE
   if (title) {
     title.classList.add('teaser-title');
     block.appendChild(title);
   }
 
-  /* -------------------------------------------
-     BODY (image + text)
-     ------------------------------------------- */
   const body = document.createElement('div');
   body.className = 'teaser-body';
 
-  /* IMAGE WRAPPER */
+  // IMAGE WRAPPER
   if (picture) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
@@ -48,7 +41,7 @@ export default function decorate(block) {
     body.appendChild(imageWrapper);
   }
 
-  /* TEXT WRAPPER */
+  // TEXT WRAPPER
   const textWrapper = document.createElement('div');
   textWrapper.className = 'text-wrapper';
 
