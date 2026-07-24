@@ -393,15 +393,15 @@
                 },
                 {
                   "name": "image",
-                  "selector": "div>div>picture>img[src]"
+                  "selector": ".image-wrapper picture img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div>div>picture>img[alt]"
+                  "selector": ".image-wrapper picture img[alt]"
                 },
                 {
-                  "name": "teaser-title",
-                  "selector": "div>div>h1"
+                  "name": "title",
+                  "selector": ".teaser-title"
                 }
               ]
             }

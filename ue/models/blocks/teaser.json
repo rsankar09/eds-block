@@ -13,16 +13,16 @@
                 "selector": "[data-style]"
             },
             {
-              "name": "image",
-              "selector": "div>div>picture>img[src]"
+            "name": "image",
+            "selector": ".image-wrapper picture img[src]"
             },
             {
-              "name": "imageAlt",
-              "selector": "div>div>picture>img[alt]"
+            "name": "imageAlt",
+            "selector": ".image-wrapper picture img[alt]"
             },
             {
-              "name": "teaser-title",
-              "selector": "div>div>h1"
+            "name": "title",
+            "selector": ".teaser-title"
             }
           ]
         }
