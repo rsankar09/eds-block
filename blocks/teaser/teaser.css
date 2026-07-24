@@ -26,18 +26,19 @@
   flex-direction: row-reverse;
 }
 
-/* ⭐ FIXED IMAGE COLUMN (matches NTT DATA) */
 .image-wrapper {
-  flex: 0 0 380px;
-  max-width: 380px;
+  flex: 1;
+  max-width: 50%;
 }
 
+/* IMAGE */
 .image-wrapper img {
-  width: 100%;       /* fill the wrapper */
+  width: 60%;
   height: auto;
   display: block;
   border-radius: 4px;
 }
+
 
 /* TEXT */
 .text-wrapper {
