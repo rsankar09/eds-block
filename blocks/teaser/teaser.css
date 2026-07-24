@@ -26,6 +26,7 @@
   flex-direction: row-reverse;
 }
 
+
 .image-wrapper {
   flex: 1;
   max-width: 50%;
@@ -37,6 +38,30 @@
   height: auto;
   display: block;
   border-radius: 4px;
+}
+
+/* IMAGE ON TOP */
+.teaser.image-on-top .teaser-body {
+  flex-direction: column;
+}
+
+.teaser.image-on-top .image-wrapper {
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* IMAGE ON BOTTOM */
+.teaser.image-on-bottom .teaser-body {
+  flex-direction: column-reverse;
+}
+
+.teaser.image-on-bottom .image-wrapper {
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
 }
 
 
