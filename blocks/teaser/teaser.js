@@ -4,45 +4,45 @@ export default function decorate(block) {
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
-//   // 1. Detect image wrapper
-//   const firstChild = block.children[0];
-//   const imgWrapper = firstChild?.querySelector('.image-wrapper');
-//   const img = imgWrapper?.querySelector('img');
+  // --- IMAGE WRAPPER ---
+  const rawImageContainer = block.children[0];
+  const picture = rawImageContainer?.querySelector('picture');
 
-//   // 2. Remove empty image wrapper if no image exists
-//   if (!img) {
-//     firstChild.remove();
-//   }
-  
-  // Normalize title
-  const titleWrapper = block.children[1];
-  const titleP = titleWrapper?.querySelector('p');
-  if (titleP) {
-    titleP.classList.add('teaser-title');
-    titleWrapper.replaceWith(titleP);
+  const imageWrapper = document.createElement('div');
+  imageWrapper.classList.add('image-wrapper');
+
+  if (picture) {
+    imageWrapper.appendChild(picture);
+  }
+  rawImageContainer.remove();
+  block.prepend(imageWrapper);
+
+  // --- CONTENT WRAPPER ---
+  const contentWrapper = document.createElement('div');
+  contentWrapper.classList.add('content-wrapper');
+
+  // Move all remaining children into content wrapper
+  while (block.children.length > 1) {
+    contentWrapper.appendChild(block.children[1]);
   }
 
+  block.appendChild(contentWrapper);
+
+  // Normalize title
+  const title = contentWrapper.querySelector('h2, p');
+  if (title) title.classList.add('teaser-title');
+
   // Normalize subtitle
-  const subtitleWrapper = block.children[2];
-  const subtitleP = subtitleWrapper?.querySelector('p');
-  if (subtitleP) {
-    subtitleP.classList.add('teaser-subtitle');
-    subtitleWrapper.replaceWith(subtitleP);
+  const subtitle = contentWrapper.querySelector('.teaser-subtitle');
+  if (!subtitle) {
+    const p = contentWrapper.querySelector('p:nth-of-type(2)');
+    if (p) p.classList.add('teaser-subtitle');
   }
 
   // Normalize description
-  const descWrapper = block.children[3];
-  const descP = descWrapper?.querySelector('p');
-  if (descP) {
-    descP.classList.add('teaser-description');
-    descWrapper.replaceWith(descP);
-  }
-
-  // CTA (if present)
-  const ctaWrapper = block.children[4];
-  const cta = ctaWrapper?.querySelector('a');
-  if (cta) {
-    cta.classList.add('teaser-cta');
-    ctaWrapper.replaceWith(cta);
+  const desc = contentWrapper.querySelector('.teaser-description');
+  if (!desc) {
+    const p = contentWrapper.querySelector('p:nth-of-type(3)');
+    if (p) p.classList.add('teaser-description');
   }
 }
