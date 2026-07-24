@@ -311,22 +311,10 @@
       },
       {
         "component": "richtext",
-        "name": "textContent_text",
-        "label": "Text",
+        "name": "teaser-title",
+        "label": "Title",
         "valueType": "string",
         "required": true
-      },
-      {
-        "component": "text",
-        "name": "textContent_cta",
-        "label": "CTA",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "textContent_ctaText",
-        "label": "CTA label",
-        "valueType": "string"
       }
     ]
   },

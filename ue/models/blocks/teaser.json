@@ -32,16 +32,8 @@
                 "selector": "div:nth-child(1) picture img[alt]"
                 },
                 {
-                "name": "textContent_text",
+                "name": "teaser-title",
                 "selector": "div:nth-child(2)"
-                },
-                {
-                "name": "textContent_cta",
-                "selector": "div:nth-child(3) a[href]"
-                },
-                {
-                "name": "textContent_ctaText",
-                "selector": "div:nth-child(3) a"
                 }
             ]
             }
@@ -94,24 +86,11 @@
                 },
                 {
                     "component": "richtext",
-                    "name": "textContent_text",
-                    "label": "Text",
+                    "name": "teaser-title",
+                    "label": "Title",
                     "valueType": "string",
                     "required": true
-                },
-                {
-                    "component": "text",
-                    "name": "textContent_cta",
-                    "label": "CTA",
-                    "valueType": "string"
-                },
-                {
-                    "component": "text",
-                    "name": "textContent_ctaText",
-                    "label": "CTA label",
-                    "valueType": "string"
-                }
-            ]
+                }            ]
         }
     ],
     "filters": []
