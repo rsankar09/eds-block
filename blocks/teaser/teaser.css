@@ -32,6 +32,13 @@
   max-width: 50%;
 }
 
+/* LEFT/RIGHT IMAGE SIZING */
+.teaser.image-on-left .image-wrapper,
+.teaser.image-on-right .image-wrapper {
+  flex: 1;
+  max-width: 50%;
+}
+
 /* IMAGE */
 .image-wrapper img {
   width: 100%;
