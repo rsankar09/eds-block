@@ -28,8 +28,8 @@
 
 /* ⭐ FIXED IMAGE COLUMN (matches NTT DATA) */
 .image-wrapper {
-  flex: 0 0 260px;   /* fixed width */
-  max-width: 260px;
+  flex: 0 0 380px;
+  max-width: 380px;
 }
 
 .image-wrapper img {
