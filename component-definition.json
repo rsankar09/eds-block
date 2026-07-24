@@ -385,7 +385,7 @@
           "model": "teaser",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"teaser\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture><h1></h1></div></div></div>",
+              "unsafeHTML": "<div class=\"teaser\"><p class=\"teaser-title\"></p><div class=\"teaser-body\"><div class=\"image-wrapper\"><picture><img></picture></div><div class=\"text-wrapper\"><p class=\"teaser-subtitle\"></p><p class=\"teaser-description\"></p><p class=\"teaser-cta\"></p></div></div></div>",
               "fields": [
                 {
                   "name": "classes",
@@ -393,15 +393,27 @@
                 },
                 {
                   "name": "image",
-                  "selector": "div>div>picture>img[src]"
+                  "selector": ".image-wrapper picture img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div>div>picture>img[alt]"
+                  "selector": ".image-wrapper picture img[alt]"
                 },
                 {
-                  "name": "text",
-                  "selector": "div>div>h1"
+                  "name": "title",
+                  "selector": ".teaser-title"
+                },
+                {
+                  "name": "subtitle",
+                  "selector": ".teaser-subtitle"
+                },
+                {
+                  "name": "description",
+                  "selector": ".teaser-description"
+                },
+                {
+                  "name": "cta",
+                  "selector": ".teaser-cta"
                 }
               ]
             }
