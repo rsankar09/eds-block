@@ -383,9 +383,20 @@
           "title": "Teaser",
           "id": "teaser",
           "model": "teaser",
+          "filter": "teaser",
           "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Teaser",
+                  "filter": "teaser"
+                }
+              }
+            },
             "da": {
-              "unsafeHTML": "<div class=\"teaser\"><p class=\"teaser-title\"></p><div class=\"teaser-body\"><div class=\"image-wrapper\"><picture><img></picture></div><div class=\"text-wrapper\"><p class=\"teaser-subtitle\"></p><p class=\"teaser-description\"></p><p class=\"teaser-cta\"></p></div></div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "classes",
@@ -393,15 +404,23 @@
                 },
                 {
                   "name": "image",
-                  "selector": ".image-wrapper picture img[src]"
+                  "selector": "div:nth-child(1) picture img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": ".image-wrapper picture img[alt]"
+                  "selector": "div:nth-child(1) picture img[alt]"
                 },
                 {
-                  "name": "title",
-                  "selector": ".teaser-title"
+                  "name": "textContent_text",
+                  "selector": "div:nth-child(2)"
+                },
+                {
+                  "name": "textContent_cta",
+                  "selector": "div:nth-child(3) a[href]"
+                },
+                {
+                  "name": "textContent_ctaText",
+                  "selector": "div:nth-child(3) a"
                 }
               ]
             }
