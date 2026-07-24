@@ -32,12 +32,6 @@
   max-width: 50%;
 }
 
-/* LEFT/RIGHT IMAGE SIZING */
-.teaser.image-on-left .image-wrapper,
-.teaser.image-on-right .image-wrapper {
-  flex: 1;
-  max-width: 50%;
-}
 
 /* IMAGE */
 .image-wrapper img {
@@ -69,6 +63,18 @@
   max-width: 100%;
   width: 100%;
   margin-top: 20px;
+}
+
+/* TOP/BOTTOM: BOTH IMAGE AND TEXT SHOULD BE HALF WIDTH */
+.teaser.image-on-top .image-wrapper,
+.teaser.image-on-top .text-wrapper,
+.teaser.image-on-bottom .image-wrapper,
+.teaser.image-on-bottom .text-wrapper {
+  flex: none;
+  width: 50%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
