@@ -13,7 +13,7 @@
 /* FLEX BODY */
 .teaser-body {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   align-items: flex-start;
 }
 
@@ -26,14 +26,9 @@
   flex-direction: row-reverse;
 }
 
-/* ⭐ REDUCE IMAGE SIZE LIKE NTT DATA */
-.image-wrapper {
-  flex: 0 0 280px;   /* fixed width */
-  max-width: 280px;  /* prevents large images */
-}
-
+/* IMAGE */
 .image-wrapper img {
-  width: 60%;
+  width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
