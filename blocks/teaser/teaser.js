@@ -1,6 +1,9 @@
 export default function decorate(block) {
   block.classList.add('teaser');
-
+  console.log(block);
+  console.log(block.dataset);
+  console.log(block.dataset.style);
+  
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
