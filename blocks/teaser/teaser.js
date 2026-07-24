@@ -28,6 +28,13 @@ export default function decorate(block) {
 
   block.appendChild(contentWrapper);
 
+  // --- FLATTEN nested divs ---
+  contentWrapper.querySelectorAll('div').forEach((div) => {
+    if (div.children.length === 1 && div.children[0].tagName === 'DIV') {
+      div.replaceWith(div.children[0]);
+    }
+  });
+
   // Normalize title
   const title = contentWrapper.querySelector('h2, p');
   if (title) title.classList.add('teaser-title');
