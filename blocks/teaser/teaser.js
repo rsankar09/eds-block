@@ -1,6 +1,6 @@
 export default function decorate(block) {
-  block.classList.add('teaser');
-  console.log(block);
+  console.log('Block:',block);
+  block.classList.add('teaser');  
   console.log(block.dataset);
   console.log(block.dataset.style);
   const styleClass = block.dataset.style;
@@ -16,7 +16,7 @@ export default function decorate(block) {
   const descCol = getCol(rows[3]);
   const ctaCol = getCol(rows[4]);
   console.log(imageCol, titleCol, subtitleCol, descCol, ctaCol);    
-  
+
 
   const picture = imageCol?.querySelector('picture');
 //   const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3')
