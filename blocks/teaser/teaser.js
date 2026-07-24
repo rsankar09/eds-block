@@ -4,36 +4,57 @@ export default function decorate(block) {
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
-  // Extract header (first child)
-  const headerWrapper = block.children[0];
-  const header = headerWrapper.querySelector('h2, p');
-  header.classList.add('teaser-title');
-  block.appendChild(header);
-  headerWrapper.remove();
+  // Extract children by index
+  const imageContainer = block.children[0];
+  const titleContainer = block.children[1];
+  const subtitleContainer = block.children[2];
+  const descContainer = block.children[3];
+  const ctaContainer = block.children[4];
 
-  // Create teaser-body
+  // --- TITLE (always full width) ---
+  const title = titleContainer.querySelector('h2, p');
+  title.classList.add('teaser-title');
+  block.appendChild(title);
+
+  // --- FLEX BODY ---
   const body = document.createElement('div');
   body.classList.add('teaser-body');
 
-  // Image wrapper
-  const rawImageContainer = block.children[0];
-  const picture = rawImageContainer.querySelector('picture');
+  // --- IMAGE WRAPPER ---
+  const picture = imageContainer.querySelector('picture');
   const imageWrapper = document.createElement('div');
   imageWrapper.classList.add('image-wrapper');
   imageWrapper.appendChild(picture);
-  rawImageContainer.remove();
 
-  // Text wrapper
+  // --- TEXT WRAPPER ---
   const textWrapper = document.createElement('div');
   textWrapper.classList.add('text-wrapper');
 
-  // Move remaining content into text-wrapper
-  while (block.children.length > 0) {
-    textWrapper.appendChild(block.children[0]);
+  // Subtitle
+  const subtitle = subtitleContainer.querySelector('p');
+  subtitle.classList.add('teaser-subtitle');
+  textWrapper.appendChild(subtitle);
+
+  // Description
+  const desc = descContainer.querySelector('p');
+  desc.classList.add('teaser-description');
+  textWrapper.appendChild(desc);
+
+  // CTA
+  const cta = ctaContainer.querySelector('a');
+  if (cta) {
+    const ctaP = document.createElement('p');
+    ctaP.classList.add('teaser-cta');
+    ctaP.appendChild(cta);
+    textWrapper.appendChild(ctaP);
   }
 
   // Build final structure
   body.appendChild(imageWrapper);
   body.appendChild(textWrapper);
+
+  // Clear block and rebuild
+  block.innerHTML = '';
+  block.appendChild(title);
   block.appendChild(body);
 }
