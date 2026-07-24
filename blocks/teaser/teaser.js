@@ -17,7 +17,7 @@ export default function decorate(block) {
   const ctaCol = getCol(rows[4]);
 
   const picture = imageCol?.querySelector('picture');
-  const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3');
+  const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3') || block.querySelector('p');
   const subtitle = subtitleCol?.querySelector('p');
   const description = descCol?.querySelector('p');
   const cta = ctaCol?.querySelector('a');
