@@ -1,56 +1,39 @@
-
 export default function decorate(block) {
   block.classList.add('teaser');
 
   const styleClass = block.dataset.style;
   if (styleClass) block.classList.add(styleClass);
 
-  // --- IMAGE WRAPPER ---
-  const rawImageContainer = block.children[0];
-  const picture = rawImageContainer?.querySelector('picture');
+  // Extract header (first child)
+  const headerWrapper = block.children[0];
+  const header = headerWrapper.querySelector('h2, p');
+  header.classList.add('teaser-title');
+  block.appendChild(header);
+  headerWrapper.remove();
 
+  // Create teaser-body
+  const body = document.createElement('div');
+  body.classList.add('teaser-body');
+
+  // Image wrapper
+  const rawImageContainer = block.children[0];
+  const picture = rawImageContainer.querySelector('picture');
   const imageWrapper = document.createElement('div');
   imageWrapper.classList.add('image-wrapper');
-
-  if (picture) {
-    imageWrapper.appendChild(picture);
-  }
+  imageWrapper.appendChild(picture);
   rawImageContainer.remove();
-  block.prepend(imageWrapper);
 
-  // --- CONTENT WRAPPER ---
-  const contentWrapper = document.createElement('div');
-  contentWrapper.classList.add('content-wrapper');
+  // Text wrapper
+  const textWrapper = document.createElement('div');
+  textWrapper.classList.add('text-wrapper');
 
-  // Move all remaining children into content wrapper
-  while (block.children.length > 1) {
-    contentWrapper.appendChild(block.children[1]);
+  // Move remaining content into text-wrapper
+  while (block.children.length > 0) {
+    textWrapper.appendChild(block.children[0]);
   }
 
-  block.appendChild(contentWrapper);
-
-  // --- FLATTEN nested divs ---
-  contentWrapper.querySelectorAll('div').forEach((div) => {
-    if (div.children.length === 1 && div.children[0].tagName === 'DIV') {
-      div.replaceWith(div.children[0]);
-    }
-  });
-
-  // Normalize title
-  const title = contentWrapper.querySelector('h2, p');
-  if (title) title.classList.add('teaser-title');
-
-  // Normalize subtitle
-  const subtitle = contentWrapper.querySelector('.teaser-subtitle');
-  if (!subtitle) {
-    const p = contentWrapper.querySelector('p:nth-of-type(2)');
-    if (p) p.classList.add('teaser-subtitle');
-  }
-
-  // Normalize description
-  const desc = contentWrapper.querySelector('.teaser-description');
-  if (!desc) {
-    const p = contentWrapper.querySelector('p:nth-of-type(3)');
-    if (p) p.classList.add('teaser-description');
-  }
+  // Build final structure
+  body.appendChild(imageWrapper);
+  body.appendChild(textWrapper);
+  block.appendChild(body);
 }
