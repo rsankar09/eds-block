@@ -5,11 +5,11 @@ export default function decorate(block) {
   if (styleClass) block.classList.add(styleClass);
 
   // Extract children by index
-  const imageContainer = block.children[0];
-  const titleContainer = block.children[1];
-  const subtitleContainer = block.children[2];
-  const descContainer = block.children[3];
-  const ctaContainer = block.children[4];
+  const imageContainer = block.children[1];
+  const titleContainer = block.children[2];
+  const subtitleContainer = block.children[3];
+  const descContainer = block.children[4];
+  const ctaContainer = block.children[5];
 
   // --- TITLE (always full width) ---
   const title = titleContainer.querySelector('h2, p');
