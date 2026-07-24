@@ -1,4 +1,5 @@
 export default function decorate(block) {
+  console.log('Teaser block decoration ');
   console.log('Block:',block);
   block.classList.add('teaser');  
   console.log(block.dataset);
