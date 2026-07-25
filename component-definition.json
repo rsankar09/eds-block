@@ -412,11 +412,11 @@
                 },
                 {
                   "name": "teaser-title",
-                  "selector": "div:nth-child(2)"
+                  "selector": "div:nth-child(2) p"
                 },
                 {
                   "name": "subtitle",
-                  "selector": "div:nth-child(3)"
+                  "selector": "div:nth-child(3) p"
                 },
                 {
                   "name": "description",
