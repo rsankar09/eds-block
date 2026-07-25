@@ -310,7 +310,7 @@
         "required": false
       },
       {
-        "component": "richtext",
+        "component": "text",
         "name": "teaser-title",
         "label": "Title",
         "valueType": "string",
