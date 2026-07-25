@@ -395,8 +395,8 @@
               }
             },
             "da": {
-              "rows": 1,
-              "columns": 2,
+              "rows": 5,
+              "columns": 1,
               "fields": [
                 {
                   "name": "classes",
@@ -411,8 +411,20 @@
                   "selector": "div:nth-child(1) picture img[alt]"
                 },
                 {
-                  "name": "teaser-title",
-                  "selector": "div:nth-child(2)"
+                  "name": "title",
+                  "selector": "div:nth-child(2) p"
+                },
+                {
+                  "name": "subtitle",
+                  "selector": "div:nth-child(3) p"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(4) p"
+                },
+                {
+                  "name": "cta",
+                  "selector": "div:nth-child(5) p"
                 }
               ]
             }

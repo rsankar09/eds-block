@@ -274,7 +274,6 @@
         "name": "classes",
         "value": "",
         "label": "Teaser options",
-        "description": "",
         "valueType": "string",
         "options": [
           {
@@ -288,6 +287,14 @@
           {
             "name": "Image-On-Right",
             "value": "image-on-right"
+          },
+          {
+            "name": "Image-On-Top",
+            "value": "image-on-top"
+          },
+          {
+            "name": "Image-On-Bottom",
+            "value": "image-on-bottom"
           },
           {
             "name": "Side-by-side",
@@ -306,15 +313,31 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image alt text",
-        "required": true
+        "label": "Image alt text"
       },
       {
         "component": "richtext",
-        "name": "teaser-title",
+        "name": "title",
         "label": "Title",
-        "valueType": "string",
-        "required": true
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "subtitle",
+        "label": "Subtitle",
+        "valueType": "string"
+      },
+      {
+        "component": "textarea",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "cta",
+        "label": "CTA",
+        "valueType": "string"
       }
     ]
   },
