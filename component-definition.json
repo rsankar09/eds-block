@@ -413,6 +413,14 @@
                 {
                   "name": "teaser-title",
                   "selector": "div:nth-child(2)"
+                },
+                {
+                  "name": "subtitle",
+                  "selector": "div:nth-child(3)"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(4)"
                 }
               ]
             }

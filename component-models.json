@@ -307,7 +307,7 @@
         "valueType": "string",
         "name": "imageAlt",
         "label": "Image alt text",
-        "required": true
+        "required": false
       },
       {
         "component": "richtext",
@@ -315,6 +315,20 @@
         "label": "Title",
         "valueType": "string",
         "required": true
+      },
+      {
+        "component": "text",
+        "name": "subtitle",
+        "label": "Subtitle",
+        "valueType": "string",
+        "required": false
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string",
+        "required": false
       }
     ]
   },

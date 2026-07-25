@@ -34,6 +34,14 @@
                 {
                 "name": "teaser-title",
                 "selector": "div:nth-child(2)"
+                },
+                {
+                "name": "subtitle",
+                "selector": "div:nth-child(3)"
+                },
+                {
+                "name": "description",
+                "selector": "div:nth-child(4)"
                 }
             ]
             }
@@ -82,7 +90,7 @@
                     "valueType": "string",
                     "name": "imageAlt",
                     "label": "Image alt text",
-                    "required": true
+                    "required": false
                 },
                 {
                     "component": "richtext",
@@ -90,7 +98,23 @@
                     "label": "Title",
                     "valueType": "string",
                     "required": true
-                }            ]
+                },
+                {
+                    "component": "text",
+                    "name": "subtitle",
+                    "label": "Subtitle",
+                    "valueType": "string",
+                    "required": false
+                },
+                {
+                    "component": "richtext",
+                    "name": "description",
+                    "label": "Description",
+                    "valueType": "string",
+                    "required": false
+                }            
+
+            ]
         }
     ],
     "filters": []
