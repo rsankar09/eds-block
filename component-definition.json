@@ -412,11 +412,11 @@
                 },
                 {
                   "name": "teaser-title",
-                  "selector": ":scope > div:nth-child(2) > p"
+                  "selector": "div:nth-child(2)"
                 },
                 {
                   "name": "subtitle",
-                  "selector": "div:nth-child(3) p"
+                  "selector": "div:nth-child(3)"
                 },
                 {
                   "name": "description",
