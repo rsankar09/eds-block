@@ -97,19 +97,21 @@ export default function decorate(block) {
   const description = descCol?.querySelector('p');
   const cta = ctaCol?.querySelector('p');
 
-  // IMPORTANT: CLONE instead of moving
-  const titleClone = title ? title.cloneNode(true) : null;
-  const subtitleClone = subtitle ? subtitle.cloneNode(true) : null;
-  const descriptionClone = description ? description.cloneNode(true) : null;
-  const ctaClone = cta ? cta.cloneNode(true) : null;
+  // CLONE instead of moving
+  const titleClone = title?.cloneNode(true);
+  const subtitleClone = subtitle?.cloneNode(true);
+  const descriptionClone = description?.cloneNode(true);
+  const ctaClone = cta?.cloneNode(true);
+  const pictureClone = picture?.cloneNode(true);
 
-  // Clear block for decorated output
-  block.innerHTML = '';
+  // Create a new wrapper for decorated output
+  const wrapper = document.createElement('div');
+  wrapper.className = 'teaser-wrapper';
 
   // TITLE OUTSIDE TEXT-WRAPPER
   if (titleClone) {
     titleClone.classList.add('teaser-title');
-    block.appendChild(titleClone);
+    wrapper.appendChild(titleClone);
   }
 
   // BODY WRAPPER
@@ -117,10 +119,10 @@ export default function decorate(block) {
   body.className = 'teaser-body';
 
   // IMAGE WRAPPER
-  if (picture) {
+  if (pictureClone) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
-    imageWrapper.appendChild(picture.cloneNode(true));
+    imageWrapper.appendChild(pictureClone);
     body.appendChild(imageWrapper);
   }
 
@@ -146,5 +148,8 @@ export default function decorate(block) {
   }
 
   body.appendChild(textWrapper);
-  block.appendChild(body);
+  wrapper.appendChild(body);
+
+  // Append decorated wrapper WITHOUT touching original authoring DOM
+  block.appendChild(wrapper);
 }
