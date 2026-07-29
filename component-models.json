@@ -310,14 +310,14 @@
         "required": false
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "teaser-title",
         "label": "Title",
         "valueType": "string",
         "required": true
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "subtitle",
         "label": "Subtitle",
         "valueType": "string",
