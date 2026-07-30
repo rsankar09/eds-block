@@ -10,18 +10,23 @@
 .cards > ul > li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
-}
-
-.cards .cards-card-body {
-  margin: 16px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .cards .cards-card-image {
-  line-height: 0;
+  width: 100%;
+  display: block;
 }
 
 .cards > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards .cards-card-body {
+  margin: 16px;
+  width: auto;
 }
