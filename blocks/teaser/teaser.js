@@ -1,58 +1,47 @@
 export default function decorate(block) {
-  console.log('Decorating teaser block');
-  block.classList.add('teaser');
-  console.log('Teaser block:', block);
-  console.log('Teaser block style class:', block.dataset.style);
+  console.log('Teaser block decoration ');
+  console.log('Block:',block);
+  block.classList.add('teaser');  
+  console.log(block.dataset);
+  console.log(block.dataset.style);
   const styleClass = block.dataset.style;
-  console.log('Teaser block style class variable:', styleClass);
   if (styleClass) block.classList.add(styleClass);
 
   const rows = [...block.children];
-  console.log('Teaser block rows:', rows);
+
   const getCol = (row) => row?.children?.[0] || row;
-  console.log('Teaser block getCol function:', getCol);
+
   const imageCol = getCol(rows[0]);
   const titleCol = getCol(rows[1]);
   const subtitleCol = getCol(rows[2]);
   const descCol = getCol(rows[3]);
   const ctaCol = getCol(rows[4]);
-  console.log('Teaser block imageCol:', imageCol);
-  console.log('Teaser block titleCol:', titleCol);
-  console.log('Teaser block subtitleCol:', subtitleCol);
-  console.log('Teaser block descCol:', descCol);
-  console.log('Teaser block ctaCol:', ctaCol);
+  console.log(imageCol, titleCol, subtitleCol, descCol, ctaCol);    
+
 
   const picture = imageCol?.querySelector('picture');
-  const title = titleCol?.querySelector('p');
+//   const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3')
+  const title = titleCol?.querySelector('p'); 
   const subtitle = subtitleCol?.querySelector('p');
   const description = descCol?.querySelector('p');
   const cta = ctaCol?.querySelector('p');
 
-  // CLONE — never move original nodes
-  const pictureClone = picture?.cloneNode(true);
-  const titleClone = title?.cloneNode(true);
-  const subtitleClone = subtitle?.cloneNode(true);
-  const descriptionClone = description?.cloneNode(true);
-  const ctaClone = cta?.cloneNode(true);
+  block.innerHTML = '';
 
-  // Build decorated wrapper
-  const wrapper = document.createElement('div');
-  wrapper.className = 'teaser-wrapper';
-
-  // TITLE OUTSIDE TEXT WRAPPER
-  if (titleClone) {
-    titleClone.classList.add('teaser-title');
-    wrapper.appendChild(titleClone);
+  // TITLE
+  if (title) {
+    title.classList.add('teaser-title');
+    block.appendChild(title);
   }
 
   const body = document.createElement('div');
   body.className = 'teaser-body';
 
   // IMAGE WRAPPER
-  if (pictureClone) {
+  if (picture) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
-    imageWrapper.appendChild(pictureClone);
+    imageWrapper.appendChild(picture);
     body.appendChild(imageWrapper);
   }
 
@@ -60,26 +49,102 @@ export default function decorate(block) {
   const textWrapper = document.createElement('div');
   textWrapper.className = 'text-wrapper';
 
-  if (subtitleClone) {
-    subtitleClone.classList.add('teaser-subtitle');
-    textWrapper.appendChild(subtitleClone);
+  if (subtitle) {
+    subtitle.classList.add('teaser-subtitle');
+    textWrapper.appendChild(subtitle);
   }
 
-  if (descriptionClone) {
-    descriptionClone.classList.add('teaser-description');
-    textWrapper.appendChild(descriptionClone);
+  if (description) {
+    description.classList.add('teaser-description');
+    textWrapper.appendChild(description);
   }
 
-  if (ctaClone) {
+  if (cta) {
     const ctaP = document.createElement('p');
     ctaP.classList.add('teaser-cta');
-    ctaP.appendChild(ctaClone);
+    ctaP.appendChild(cta);
     textWrapper.appendChild(ctaP);
   }
 
   body.appendChild(textWrapper);
-  wrapper.appendChild(body);
-
-  // Append decorated wrapper WITHOUT deleting authoring DOM
-  block.appendChild(wrapper);
+  block.appendChild(body);
 }
+//------------------------------------
+
+// export default function decorate(block) {
+//   console.log('Teaser block decoration');
+
+//   block.classList.add('teaser');
+
+//   const styleClass = block.dataset.style;
+//   if (styleClass) block.classList.add(styleClass);
+
+//   // ORIGINAL AUTHORING STRUCTURE (DA depends on this)
+//   const rows = [...block.children];
+
+//   const getCol = (row) => row?.children?.[0] || row;
+
+//   const imageCol = getCol(rows[0]);
+//   const titleCol = getCol(rows[1]);
+//   const subtitleCol = getCol(rows[2]);
+//   const descCol = getCol(rows[3]);
+//   const ctaCol = getCol(rows[4]);
+
+//   // Extract original <p> elements
+//   const picture = imageCol?.querySelector('picture');
+//   const title = titleCol?.querySelector('p');
+//   const subtitle = subtitleCol?.querySelector('p');
+//   const description = descCol?.querySelector('p');
+//   const cta = ctaCol?.querySelector('p');
+
+//   // IMPORTANT: CLONE instead of moving
+//   const titleClone = title ? title.cloneNode(true) : null;
+//   const subtitleClone = subtitle ? subtitle.cloneNode(true) : null;
+//   const descriptionClone = description ? description.cloneNode(true) : null;
+//   const ctaClone = cta ? cta.cloneNode(true) : null;
+
+//   // Clear block for decorated output
+//   block.innerHTML = '';
+
+//   // TITLE OUTSIDE TEXT-WRAPPER
+//   if (titleClone) {
+//     titleClone.classList.add('teaser-title');
+//     block.appendChild(titleClone);
+//   }
+
+//   // BODY WRAPPER
+//   const body = document.createElement('div');
+//   body.className = 'teaser-body';
+
+//   // IMAGE WRAPPER
+//   if (picture) {
+//     const imageWrapper = document.createElement('div');
+//     imageWrapper.className = 'image-wrapper';
+//     imageWrapper.appendChild(picture.cloneNode(true));
+//     body.appendChild(imageWrapper);
+//   }
+
+//   // TEXT WRAPPER
+//   const textWrapper = document.createElement('div');
+//   textWrapper.className = 'text-wrapper';
+
+//   if (subtitleClone) {
+//     subtitleClone.classList.add('teaser-subtitle');
+//     textWrapper.appendChild(subtitleClone);
+//   }
+
+//   if (descriptionClone) {
+//     descriptionClone.classList.add('teaser-description');
+//     textWrapper.appendChild(descriptionClone);
+//   }
+
+//   if (ctaClone) {
+//     const ctaP = document.createElement('p');
+//     ctaP.classList.add('teaser-cta');
+//     ctaP.appendChild(ctaClone);
+//     textWrapper.appendChild(ctaP);
+//   }
+
+//   body.appendChild(textWrapper);
+//   block.appendChild(body);
+// }
