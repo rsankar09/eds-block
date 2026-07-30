@@ -1,10 +1,4 @@
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
-}
-
-.cards .card {
+.teaser_ntt {
   border: 1px solid #dadada;
   background-color: var(--background-color);
   display: flex;
@@ -12,12 +6,12 @@
   box-sizing: border-box;
 }
 
-.cards .card picture img {
+.teaser_ntt picture img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.cards .card [data-aue-prop="text"] {
+.teaser_ntt [data-aue-prop="text"] {
   margin: 16px;
 }

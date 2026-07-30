@@ -45,6 +45,8 @@
       "components": [
         "accordion",
         "cards",
+        "teaser",
+        "teaser_ntt",
         "carousel",
         "columns",
         "embed",
@@ -57,8 +59,6 @@
         "tabs",
         "table",
         "text",
-        "teaser",
-        "teaser_ntt",
         "video",
         "product-recommendations"
       ]
