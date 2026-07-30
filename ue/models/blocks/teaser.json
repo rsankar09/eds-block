@@ -3,8 +3,6 @@
         {
         "title": "Teaser",
         "id": "teaser",
-        "model": "teaser",
-        "filter": "teaser",
         "plugins": {
             "xwalk": {
             "page": {
