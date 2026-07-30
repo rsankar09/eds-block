@@ -444,8 +444,20 @@
                   "selector": "div:nth-child(1)>picture>img[alt]"
                 },
                 {
-                  "name": "text",
+                  "name": "title",
                   "selector": "div:nth-child(2)"
+                },
+                {
+                  "name": "subtitle",
+                  "selector": "div:nth-child(3)"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(4)"
+                },
+                {
+                  "name": "cta",
+                  "selector": "div:nth-child(5)"
                 }
               ]
             },
