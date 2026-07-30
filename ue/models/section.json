@@ -58,6 +58,7 @@
         "table",
         "text",
         "teaser",
+        "teaser_ntt",
         "video",
         "product-recommendations"
       ]
