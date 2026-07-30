@@ -27,16 +27,21 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export default function decorate(block) {
   // Extract rows from authoring
   const rows = [...block.children];
+  console.log(rows);
+  
 
   const imageRow = rows[0];
   const titleRow = rows[1];
   const subtitleRow = rows[2];
   const descRow = rows[3];
-
+  
+  console.log(imageRow, titleRow, subtitleRow, descRow);
+  
   const picture = imageRow?.querySelector('picture');
   const title = titleRow?.querySelector('p');
   const subtitle = subtitleRow?.querySelector('p');
   const description = descRow?.querySelector('p');
+  console.log(picture, title, subtitle, description);
 
   // Build wrapper
   const wrapper = document.createElement('div');
