@@ -1,4 +1,4 @@
-.teaser_ntt {
+.teaserntt {
   border: 1px solid #dadada;
   background-color: var(--background-color);
   display: flex;
@@ -6,12 +6,12 @@
   box-sizing: border-box;
 }
 
-.teaser_ntt picture img {
+.teaserntt picture img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.teaser_ntt [data-aue-prop="text"] {
+.teaserntt [data-aue-prop="text"] {
   margin: 16px;
 }
