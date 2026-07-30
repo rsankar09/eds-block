@@ -350,14 +350,14 @@
         "multi": false
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "title",
         "label": "Title",
         "value": ""
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "subtitle",
         "label": "Subtitle",

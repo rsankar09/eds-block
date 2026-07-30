@@ -11,8 +11,8 @@
           "fields": [
             { "name": "image", "selector": "div:nth-child(1)>picture>img[src]"},
             { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]"},
-            { "name": "title", "selector": "div:nth-child(2) p" },            
-            { "name": "subtitle", "selector": "div:nth-child(3) p" },
+            { "name": "title", "selector": "div:nth-child(2)" },            
+            { "name": "subtitle", "selector": "div:nth-child(3)" },
             { "name": "text", "selector": "div:nth-child(4)" },
             { "name": "cta", "selector": "div:nth-child(5)" }
           ]
@@ -48,14 +48,14 @@
           "multi": false
         },
         {
-          "component": "text",
+          "component": "richtext",
           "valueType": "string",
           "name": "title",
           "label": "Title",
           "value": ""
         },
         {
-          "component": "text",
+          "component": "richtext",
           "valueType": "string",
           "name": "subtitle",
           "label": "Subtitle",
