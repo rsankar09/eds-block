@@ -2,6 +2,31 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+
+   /* ---------------------------------------------------------
+     1. Read UE attributes (block.dataset.style)
+     --------------------------------------------------------- */
+  const styleValue = block.dataset.style || '';
+  console.log('Style Value:', styleValue);
+
+  /* ---------------------------------------------------------
+     2. Inject DA-visible node so DA can store/read style
+        DA selector: .cards-style[data-style]
+     --------------------------------------------------------- */
+  const styleNode = document.createElement('div');
+  styleNode.className = 'cards-style';
+  styleNode.dataset.style = styleValue;
+  console.log('Style Node:', styleNode);
+  block.prepend(styleNode);
+
+  /* ---------------------------------------------------------
+     3. Apply CSS class based on style
+     --------------------------------------------------------- */
+  if (styleValue) {
+    block.classList.add(styleValue);   // <-- THIS activates .cards.home.block CSS
+  }
+  console.log('Block after applying style class:', block);
+  console.log('Block children before converting to ul/li:', [...block.children]);
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
