@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Teaser NTT",
+      "title": "Teaser-NTT",
       "id": "teaserntt",
       "model": "teaserntt",
       "plugins": {
@@ -21,7 +21,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Teaser NTT",
+              "name": "Teaser-NTT",
               "model": "teaserntt"
             }
           }
