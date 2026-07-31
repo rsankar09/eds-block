@@ -10,6 +10,7 @@
     "components": [
       "accordion",
       "cards",
+      "cardsntt",
       "teaser",
       "carousel",
       "columns",
@@ -32,6 +33,16 @@
     "components": [
       "accordion-item"
     ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "card",
+    "components": []
   },
   {
     "id": "cards",

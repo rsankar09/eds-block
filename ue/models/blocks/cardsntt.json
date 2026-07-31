@@ -1,0 +1,110 @@
+{
+  "definitions": [
+    {
+      "title": "Cards NTT",
+      "id": "cards",
+      "model": "cards",
+      "filter": "cards",
+      "plugins": {
+        "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards NTT",
+                  "filter": "cards"
+                }
+              }
+        },
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            {
+              "name": "style",
+              "selector": ".cards-style[data-style]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Card",
+      "id": "card",
+      "model": "card",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]"},
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]"},
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        },
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Card",
+              "model": "card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Home",
+              "value": "home"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "cards",
+      "components": ["card"]
+    },
+    {
+      "id": "card",
+      "components": []
+    }
+  ]
+}

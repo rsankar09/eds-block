@@ -45,6 +45,7 @@
       "components": [
         "accordion",
         "cards",
+        "cardsntt",
         "teaser",
         "carousel",
         "columns",
