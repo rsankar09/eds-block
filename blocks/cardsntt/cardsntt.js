@@ -4,6 +4,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
 
+    console.log('Block value:', block);
   /* ---------------------------------------------------------
      1. Read UE attributes (block.dataset.style)
      --------------------------------------------------------- */
@@ -19,7 +20,7 @@ export default function decorate(block) {
   block.prepend(styleNode);
   console.log('Injected style node:', styleNode);
   console.log('Block after injecting style node:', block);
-  
+
   /* ---------------------------------------------------------
      3. Apply CSS class based on style
      --------------------------------------------------------- */
