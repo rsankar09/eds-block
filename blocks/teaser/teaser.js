@@ -26,7 +26,7 @@ export default function decorate(block) {
   console.log('Rows:', rows);
   const picture = imageCol?.querySelector('picture');
 //   const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3')
-  const title = titleCol?.querySelector('p'); 
+  const title = titleCol?.querySelector('p') || titleCol?.querySelector('h2[data-richtext-prop="teaser-title"]');
   console.log('Title:', title);
   const subtitle = subtitleCol?.querySelector('p');
   console.log('Subtitle:', subtitle);
