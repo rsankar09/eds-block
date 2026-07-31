@@ -12,13 +12,18 @@ export default function decorate(block) {
   const getCol = (row) => row?.children?.[0] || row;
 
   const imageCol = getCol(rows[0]);
+  console.log('Image Column:', imageCol);
   const titleCol = getCol(rows[1]);
+  console.log('Title Column:', titleCol);
   const subtitleCol = getCol(rows[2]);
+  console.log('Subtitle Column:', subtitleCol);
   const descCol = getCol(rows[3]);
+  console.log('Description Column:', descCol);
   const ctaCol = getCol(rows[4]);
+  console.log('CTA Column:', ctaCol);
   console.log(imageCol, titleCol, subtitleCol, descCol, ctaCol);    
 
-
+  console.log('Rows:', rows);
   const picture = imageCol?.querySelector('picture');
 //   const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3')
   const title = titleCol?.querySelector('p'); 
