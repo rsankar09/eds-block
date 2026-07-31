@@ -27,9 +27,13 @@ export default function decorate(block) {
   const picture = imageCol?.querySelector('picture');
 //   const title = titleCol?.querySelector('h1, h2, h3') || block.querySelector('h1, h2, h3')
   const title = titleCol?.querySelector('p'); 
+  console.log('Title:', title);
   const subtitle = subtitleCol?.querySelector('p');
+  console.log('Subtitle:', subtitle);
   const description = descCol?.querySelector('p');
+  console.log('Description:', description);
   const cta = ctaCol?.querySelector('p');
+  console.log('CTA:', cta);
 
   block.innerHTML = '';
 
