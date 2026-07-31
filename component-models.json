@@ -147,7 +147,7 @@
     ]
   },
   {
-    "id": "cards",
+    "id": "cardsntt",
     "fields": [
       {
         "component": "multiselect",
