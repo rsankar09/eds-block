@@ -7,30 +7,30 @@ export default function decorate(block) {
 
   console.log('Block value:', block);
 
-  let styleNode = block.querySelector('.cards-style');
+  const styleNode = block.querySelector('.cards-style');
   console.log('Style node:', styleNode);
   /* ---------------------------------------------------------
      1. Read UE attributes (block.dataset.style)
      --------------------------------------------------------- */
-  const styleValue = block.dataset.style || '';
-  console.log('Style value:', styleValue);
+//   const styleValue = block.dataset.style || '';
+//   console.log('Style value:', styleValue);
   /* ---------------------------------------------------------
      2. Inject DA-visible node so DA can store/read style
         DA selector: .cards-style[data-style]
      --------------------------------------------------------- */
-  const styleNode = document.createElement('div');
-  styleNode.className = 'cards-style';
-  styleNode.dataset.style = styleValue;
-  block.prepend(styleNode);
-  console.log('Injected style node:', styleNode);
-  console.log('Block after injecting style node:', block);
+//   const styleNode = document.createElement('div');
+//   styleNode.className = 'cards-style';
+//   styleNode.dataset.style = styleValue;
+//   block.prepend(styleNode);
+//   console.log('Injected style node:', styleNode);
+//   console.log('Block after injecting style node:', block);
 
   /* ---------------------------------------------------------
      3. Apply CSS class based on style
      --------------------------------------------------------- */
-  if (styleValue) {
-    block.classList.add(styleValue);   // <-- THIS activates .cards.home.block CSS
-  }
+//   if (styleValue) {
+//     block.classList.add(styleValue);   // <-- THIS activates .cards.home.block CSS
+//   }
 
   /* change to ul, li */
   const ul = document.createElement('ul');
