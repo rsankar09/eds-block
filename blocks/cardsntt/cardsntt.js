@@ -12,14 +12,14 @@ export default function decorate(block) {
   /* ---------------------------------------------------------
      1. Read UE attributes (block.dataset.style)
      --------------------------------------------------------- */
-//   const styleValue = block.dataset.style || '';
-//   console.log('Style value:', styleValue);
+  const styleValue = styleNode.dataset.style || '';
+  console.log('Style value:', styleValue);
   /* ---------------------------------------------------------
      2. Inject DA-visible node so DA can store/read style
         DA selector: .cards-style[data-style]
      --------------------------------------------------------- */
 //   const styleNode = document.createElement('div');
-//   styleNode.className = 'cards-style';
+  styleNode.className = 'cards-style';
   styleNode.dataset.style = styleValue;
   block.prepend(styleNode);
   console.log('Injected style node:', styleNode);
