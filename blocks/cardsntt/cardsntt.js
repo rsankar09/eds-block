@@ -4,7 +4,11 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
 
-    console.log('Block value:', block);
+
+  console.log('Block value:', block);
+
+  let styleNode = block.querySelector('.cards-style');
+  console.log('Style node:', styleNode);
   /* ---------------------------------------------------------
      1. Read UE attributes (block.dataset.style)
      --------------------------------------------------------- */
