@@ -20,17 +20,17 @@ export default function decorate(block) {
      --------------------------------------------------------- */
 //   const styleNode = document.createElement('div');
 //   styleNode.className = 'cards-style';
-//   styleNode.dataset.style = styleValue;
-//   block.prepend(styleNode);
-//   console.log('Injected style node:', styleNode);
-//   console.log('Block after injecting style node:', block);
+  styleNode.dataset.style = styleValue;
+  block.prepend(styleNode);
+  console.log('Injected style node:', styleNode);
+  console.log('Block after injecting style node:', block);
 
   /* ---------------------------------------------------------
      3. Apply CSS class based on style
      --------------------------------------------------------- */
-//   if (styleValue) {
-//     block.classList.add(styleValue);   // <-- THIS activates .cards.home.block CSS
-//   }
+  if (styleValue) {
+    block.classList.add(styleValue);   // <-- THIS activates .cards.home.block CSS
+  }
 
   /* change to ul, li */
   const ul = document.createElement('ul');
